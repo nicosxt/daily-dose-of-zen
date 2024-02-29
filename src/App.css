@@ -1,38 +1,170 @@
-.App {
-  text-align: center;
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif; /* Default font */
+  background-color: rgb(135, 255, 151);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: 100vh; /* Full viewport height */
+  padding: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.landing-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  /* background-color: rgb(255, 255, 180); */
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.landing-container h1{
+  font-size: 3vw;
+  margin-bottom: 80px;
+}
+
+/* --------- General Button Styles --------- */
+.general-button {
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  border: 1.5px solid #000000;
+  border-radius: 0px;
+  background-color: #78ffb7;
+  color: black;
+  min-width: 170px;
+  max-width: 350px;
+}
+
+.general-button:hover {
+  background-color: #13c1a1;
+}
+
+/* --------- Input Page Styles --------- */
+
+.input-button-parent {
+  background-color: yellow;
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  height: 100vh; /* Full viewport height to ensure centering works over the entire screen */
+}
+
+.input-button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  gap: 10px;
+  /* center the element here while give it max width of 70% of the screen */
+  max-width: 70%;
+  margin: auto;
+}
+
+.input-item{
+  /* have each input-item to be in its own row inside input-button-container */
+  flex: 0 0 100%; /* 1 input per row */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-bottom: 20px; /* Space below the input field */
+
+}
+
+.input-buttons{
+  max-width: 90%;
+}
+
+.input-button {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  flex: 1 1 calc(33.33% - 20px); /* Allows 3 buttons per row */
+  max-width: calc(33.33% - 20px); /* Adjust max width to fit 3 in a row */
+  padding: 10px;
+  margin: 5px;
+  border: 1.5px solid #000000;
+  border-radius: 0px;
+  /* background-color: #28a745; */
+  /* color: white; */
+  cursor: pointer;
+}
+
+
+@media screen and (max-width: 600px) { /* Adjust 600px as needed */
+  .input-button-container {
+    height: 70vh;
   }
-  to {
-    transform: rotate(360deg);
+  .input-button{
+    flex: 0 0 100%; /* 1 button per row */
+    max-width: 70%;
+  }
+}
+
+.type-inputs {
+  width: 90%;
+  margin: auto;
+  padding: 10px;
+  font-size: 16px;
+  border: 1.5px solid #000000;
+  border-radius: 0px;
+
+}
+
+/* --------- Quote Page Styles --------- */
+
+.quote-display-parent{
+  background-color: rgb(255, 255, 180);
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  height: 100vh; /* Full viewport height to ensure centering works over the entire screen */
+}
+
+.quote-display-container {
+  /* background-color: yellow; */
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  height: 70vh; /* Full viewport height to ensure centering works over the entire screen */
+  flex-direction: column;
+}
+
+.quote-display-item {
+/* make the font size responsive to screen width */
+  text-align: center;
+  font-size: 2vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+  gap: 10px;
+  /* background-color: aqua; */
+  /* center the element here while give it max width of 70% of the screen */
+  max-width: 77%;
+  min-width: 50%;
+  margin: auto;
+}
+
+
+@media screen and (max-width: 600px) { /* Adjust 600px as needed */
+  .quote-display-item {
+    font-size: 4vw;
+    max-width: 90%;
+  }
+  .input-button{
+    flex: 0 0 100%; /* 1 button per row */
+    max-width: 70%;
   }
 }
